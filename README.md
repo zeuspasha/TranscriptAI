@@ -54,7 +54,7 @@ This is an open-source project and contributions are welcome. You can suggest ne
 Because documents should be more than just text – they should be structured and meaningful.  
 TranscriptAI does that for you.
 
-📫 Developer: [Besat Çıngar]  
+📫 Developer: [Pasha]  
 📅 Version: 1.0  
 🔗 License: MIT
 
@@ -107,6 +107,6 @@ Bu proje açık kaynaklıdır ve katkıya açıktır. Yeni özellik önerileri, 
 Çünkü bir belge sadece yazıdan ibaret olmamalı. Bilgi düzenli olmalı. Anlam ön planda olmalı.  
 TranscriptAI, bunu sizin için yapar.
 
-📫 Geliştirici: [Besat Çıngar]  
+📫 Geliştirici: [Pasha]  
 📅 Sürüm: 1.0  
 🔗 Lisans: MIT

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <title>PDF Yükle - Namık Kemal Üniversitesi</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f4f8;
+            color: #003366;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container {
+            background: white;
+            padding: 40px 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 51, 102, 0.15);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            z-index: 1;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+            font-weight: 700;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #005ea2;
+            padding-bottom: 10px;
+        }
+
+        input[type="file"] {
+            border: 2px solid #005ea2;
+            padding: 12px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+            color: #003366;
+            transition: border-color 0.3s ease;
+        }
+        input[type="file"]:hover,
+        input[type="file"]:focus {
+            border-color: #007acc;
+            outline: none;
+        }
+
+        button {
+            background-color: #005ea2;
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 6px;
+            margin-top: 25px;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #007acc;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 25px 20px;
+                max-width: 90%;
+            }
+        }
+
+        /* Başlangıçta gizli */
+        #loadingOverlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Gösterildiğinde flex olur */
+        #loadingOverlay.show {
+            display: flex;
+        }
+
+        #loadingOverlay img {
+            width: 80px;
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>PDF Dosyasını Yükle</h2>
+        <form id="uploadForm" method="post" action="/upload" enctype="multipart/form-data">
+            <input type="file" name="pdf_file" accept=".pdf" required />
+            <button type="submit">Gönder</button>
+        </form>
+    </div>
+
+    <div id="loadingOverlay">
+        <img src="https://media.tenor.com/-7LKYbNbLiIAAAAi/vodafone-greece-vodafone.gif" alt="Yükleniyor..." />
+    </div>
+
+    <script>
+        const form = document.getElementById('uploadForm');
+        const loadingOverlay = document.getElementById('loadingOverlay');
+
+        form.addEventListener('submit', function() {
+            loadingOverlay.classList.add('show');
+        });
+    </script>
+</body>
+</html>
